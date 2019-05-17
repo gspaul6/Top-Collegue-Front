@@ -13,12 +13,16 @@
       <div class="alert alert-danger" *ngIf="email.dirty && email.invalid">
         <p>Le Email est invalide.</p>
       </div>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <small id="emailHelp" class="form-text text-muted">we will never share your email with anyone else.</small>
     <br>
     <br>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" name="motPass" id="motPass" [(ngModel)]="collegueAuth.motPass" #motPass="ngModel" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="urlPhoto">PhotoUrl</label>
+      <input type="url" class="form-control" name="urlPhoto" id="urlPhoto" [(ngModel)]="collegueAuth.photoUrl" #urlPhoto="ngModel" placeholder="this section is optional">
     </div>
   </div>
 </div>

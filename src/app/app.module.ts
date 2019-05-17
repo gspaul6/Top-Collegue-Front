@@ -5,16 +5,22 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { GallerieComponent } from './gallerie/gallerie.component';
+import { ROUTES } from './app.route';
+import { RouterModule } from '@angular/router';
+import { AuthService } from './services/auth-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    LayoutComponent,
-    LoginComponent
+    LoginComponent,
+    GallerieComponent
   ],
   imports: [
     BrowserModule,
@@ -22,11 +28,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FlexLayoutModule,
     MatTabsModule,
     NgbModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    RouterModule.forRoot(ROUTES),
+     HttpClientModule
   ],
   exports: [
     MatTabsModule,
-    NgbModule
+    NgbModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

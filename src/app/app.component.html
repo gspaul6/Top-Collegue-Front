@@ -1,2 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="grey lighten-4 py-4 " routerLinkActive="active">
+      <li class="nav-item"><button type="button" class="btn btn-primary" routerLink="/accueil">Accueil</button></li>
+      <li class="nav-item"><button type="button" class="btn btn-primary" (click)="deconnexion()"
+          routerLink="/login">deconnexion</button></li>
+      <!-- <li class="nav-item"><a class="nav-link" routerLink="/aprospos">A Prospos</a></li> -->
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<div fxLayout="row wrap" fxLayoutAlign="center center" class="layout-wrapper">
+  <div fxFlex="80%" fxFlex.lt-md="100%" class="flex-wrapper">
 
-<app-menu></app-menu>
+  </div>
+</div>
+
+

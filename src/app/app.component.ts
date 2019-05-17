@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Top-Collegue';
+  constructor(private service: AuthService) {
+
+  }
+
+deconnexion(){
+this.service.deconnexionDeCollegue().subscribe(col=>{},err=>{});
+}
 }
