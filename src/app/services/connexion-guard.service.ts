@@ -17,7 +17,7 @@ export class ConnexionGuardService implements CanActivate {
       if (this.service.isLogin()) {
       return this.service.isLogin();
       } else {
-      this.router.parseUrl('/login');
+      return this.router.parseUrl('/login');
       }
   }
 
