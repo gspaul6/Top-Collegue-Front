@@ -17,22 +17,22 @@ export class AuthService {
   // urlSpring: string = environment.urlGet;
   constructor(private httpClient: HttpClient) { }
 
-authorizationDeCollegue(collegueAuth: CollegueAuth): Observable<CollegueAuth>{
+authorizationDeCollegue(collegueAuth: CollegueAuth): Observable<CollegueAuth> {
   return this.httpClient.post<CollegueAuth>(`${this.urlAuth}/auth`, collegueAuth, {withCredentials: true}) .pipe(
     tap(user => {
       // this.user.next(user);
-      this.connected = true;} )
+      this.connected = true; } )
   );
 }
 
 
-deconnexionDeCollegue(): any{
+deconnexionDeCollegue(): any {
   return this.httpClient.post(`${this.urlAuth}/logout`, null, {withCredentials: true}).pipe(
     tap(() => this.connected = false )
   );
 }
 
-isLogin(){
+isLogin() {
  return this.connected;
 }
 }

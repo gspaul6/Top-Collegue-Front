@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ScoreBoard } from './ScoreBoard';
 
+export class Participants {
 
-export class CollegueAuth {
-
-    constructor(public nom:string, public motPass:string, public photoUrl?: string){}
+    constructor(public matricule: string, public nom: string, public prenom: string,
+                public email: string, public photoUrl: string, public score: ScoreBoard) {}
 
 }

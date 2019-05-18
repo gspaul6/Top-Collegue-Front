@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-      <div class="col-4" *ngFor="let col of collegue">
-          <a routerLink="/gallerie/{{col.matricule}}"> <img class="img-fluid" src="{{col.photoUrl}}"></a>
-
+      <div class="col-4" *ngFor="let part of participant">
+          <a routerLink="/gallerie/{{part.matricule}}"> <img class="img-fluid" src="{{part.photoUrl}}"></a>
+  <p>{{part.score.likes}}</p>  <p>{{part.score.disLikes}}</p>
       </div>
 
   </div>
