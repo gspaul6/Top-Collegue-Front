@@ -10,13 +10,13 @@ import { Participants } from '../models/Participants';
     providedIn: 'root'
 })
 export class PartcipantService {
-    urlPart: string = environment.urlPart;
+    urlAuth: string = environment.urlAuth;
     sujet: Subject<Participants> = new Subject<Participants>();
     constructor(private httpClient: HttpClient) { }
     prendreAbonnement(): Observable<Participants> {
         return this.sujet.asObservable();
     }
     participantList(): Observable<Participants[]> {
-        return this.httpClient.get<Participants[]>(`${this.urlPart}`, { withCredentials: true });
+        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true });
     }
 }

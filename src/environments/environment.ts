@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  urlAuth: 'http://localhost:8081',
-  urlPart: 'http://localhost:8081/participants'
+  urlAuth: 'http://localhost:8081'
 };
 
 /*
