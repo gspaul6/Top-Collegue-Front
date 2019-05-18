@@ -5,18 +5,45 @@ import { CollegueAuth } from '../models/CollegueAuth';
 import { environment } from 'src/environments/environment';
 import { tap, map } from 'rxjs/operators';
 import { Participants } from '../models/Participants';
+import { PetiteDto } from '../models/petiteDto';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PartcipantService {
     urlAuth: string = environment.urlAuth;
-    sujet: Subject<Participants> = new Subject<Participants>();
+    sujet: Subject<Participants[]> = new Subject<Participants[]>();
+    gallerieSujet: Subject<Participants[]> = new Subject<Participants[]>();
     constructor(private httpClient: HttpClient) { }
-    prendreAbonnement(): Observable<Participants> {
+    prendreAbonnement(): Observable<Participants[]> {
         return this.sujet.asObservable();
     }
     participantList(): Observable<Participants[]> {
-        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true });
+        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true }).pipe(
+            tap(part => {
+                this.gallerieSujet.next(part);
+            }
+
+            )
+        );
     }
+
+    upVote(petitDto: PetiteDto): any {
+        return this.httpClient.patch<Participants>(`${this.urlAuth}/participants/upvote`, petitDto, { withCredentials: true } );
+    }
+
+    downVote(petitDto: PetiteDto): any {
+        return this.httpClient.patch<Participants>(`${this.urlAuth}/participants/downvote`, petitDto, { withCredentials: true } );
+    }
+    getScoreList(): Observable <Participants[] > {
+        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants/score`, { withCredentials: true } ).pipe(
+            (
+                tap( part => {
+                this.sujet.next(part);
+
+            })
+
+        )
+        );
+        }
 }

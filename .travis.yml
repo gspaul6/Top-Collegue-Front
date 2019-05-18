@@ -4,8 +4,8 @@ node_js:
 before_script:
   - npm install
 script: 
-- npm run build
-- cp dist/Top-Collegue-Front/index.html dist/Top-Collegue-Front/404.html
+  - npm run build
+  - cp dist/Top-Collegue-Front/index.html dist/Top-Collegue-Front/404.html
 deploy:
   local-dir: dist/Top-Collegue-Front
   provider: pages
@@ -15,4 +15,4 @@ deploy:
   on:
     branch: master
 notifications:
-  email: false
+  email: false   
