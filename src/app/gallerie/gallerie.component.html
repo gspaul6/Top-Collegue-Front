@@ -7,6 +7,7 @@
         <p><strong>{{ part.prenom }} {{ part.nom | uppercase }}</strong></p>
         <p><button class="btn btn-link" (click)="upVote(part.matricule)"> Like</button>
           <button class="btn btn-link" (click)="downVote(part.matricule)">Unlike</button></p>
+          <p>{{part.score.likes}} {{part.score.disLikes}}</p>
       </div>
 
 

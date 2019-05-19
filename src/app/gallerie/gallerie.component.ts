@@ -11,7 +11,7 @@ import { PetiteDto } from '../models/petiteDto';
 export class GallerieComponent implements OnInit {
 message: string;
   participant: Participants[];
-  petit: PetiteDto = new PetiteDto(' ', 0);
+  petit: PetiteDto;
   constructor(private service: PartcipantService) { }
 upVote(matricule: string) {
   this.petit.like = 1;

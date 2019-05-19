@@ -3,7 +3,7 @@ import { ScoreCard } from './ScoreCard';
 
 export class Participants {
 
-    constructor(public matricule: string, public nom: string, public prenom: string,
-                public email: string, public photoUrl: string, public score: ScoreCard) {}
+    constructor(public matricule: string, public nom: string,  public score: ScoreCard, public prenom: string,
+                public email: string, public photoUrl: string ) {}
 
 }
