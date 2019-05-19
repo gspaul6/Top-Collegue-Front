@@ -14,13 +14,16 @@ import { ROUTES } from './app.route';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ScoreComponent } from './score/score.component';
+import { PipeScore } from './pipes/pipeScore';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LoginComponent,
-    GallerieComponent
+    GallerieComponent,
+    ScoreComponent,
+    PipeScore
   ],
   imports: [
     BrowserModule,

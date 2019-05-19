@@ -18,14 +18,11 @@ export class PartcipantService {
     prendreAbonnement(): Observable<Participants[]> {
         return this.sujet.asObservable();
     }
+    takeSubcription(): Observable<Participants[]> {
+        return this.gallerieSujet.asObservable();
+    }
     participantList(): Observable<Participants[]> {
-        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true }).pipe(
-            tap(part => {
-                this.gallerieSujet.next(part);
-            }
-
-            )
-        );
+        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true });
     }
 
     upVote(petitDto: PetiteDto): any {
@@ -36,14 +33,6 @@ export class PartcipantService {
         return this.httpClient.patch<Participants>(`${this.urlAuth}/participants/downvote`, petitDto, { withCredentials: true } );
     }
     getScoreList(): Observable <Participants[] > {
-        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants/score`, { withCredentials: true } ).pipe(
-            (
-                tap( part => {
-                this.sujet.next(part);
-
-            })
-
-        )
-        );
-        }
+        return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants/score`, { withCredentials: true } );
+}
 }

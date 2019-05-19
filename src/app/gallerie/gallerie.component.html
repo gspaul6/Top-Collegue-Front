@@ -1,9 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-      <div class="col-4" *ngFor="let part of participant">
-          <a routerLink="/gallerie/{{part.matricule}}"> <img class="img-fluid" src="{{part.photoUrl}}"></a>
-  <p>{{part.score.likes}}</p>  <p>{{part.score.disLikes}}</p>
+    <div class="col-lg-3 col-sm-12 mb-4 d-flex justify-content-center" *ngFor="let part of participant">
+      <div class="container-fluid text-center">
+        <img class="img-fluid" src="{{part.photoUrl}}" height="300" width="300">
+        <br>
+        <p><strong>{{ part.prenom }} {{ part.nom | uppercase }}</strong></p>
+        <p><button class="btn btn-link" (click)="upVote(part.matricule)"> Like</button>
+          <button class="btn btn-link" (click)="downVote(part.matricule)">Unlike</button></p>
       </div>
 
+
+    </div>
   </div>
 </div>

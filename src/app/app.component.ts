@@ -12,7 +12,7 @@ export class AppComponent {
 
   }
 
-deconnexion(){
-this.service.deconnexionDeCollegue().subscribe(col=>{},err=>{});
+deconnexion() {
+this.service.deconnexionDeCollegue().subscribe(col => {}, err => {});
 }
 }
