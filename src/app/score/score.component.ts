@@ -15,6 +15,7 @@ export class ScoreComponent implements OnInit {
   ngOnInit() {
     this.service.getScoreList().subscribe(
       participants => {
+        console.log(participants);
         this.participants = participants;
       },
       err => {

@@ -5,7 +5,7 @@ import { CollegueAuth } from '../models/CollegueAuth';
 import { environment } from 'src/environments/environment';
 import { tap, map } from 'rxjs/operators';
 import { Participants } from '../models/Participants';
-import { PetiteDto } from '../models/petiteDto';
+import { PetitDto } from '../models/petitDto';
 
 @Injectable({
     providedIn: 'root'
@@ -25,11 +25,11 @@ export class PartcipantService {
         return this.httpClient.get<Participants[]>(`${this.urlAuth}/participants`, { withCredentials: true });
     }
 
-    upVote(petitDto: PetiteDto): any {
+    upVote(petitDto: PetitDto): any {
         return this.httpClient.patch<Participants>(`${this.urlAuth}/participants/upvote`, petitDto, { withCredentials: true } );
     }
 
-    downVote(petitDto: PetiteDto): any {
+    downVote(petitDto: PetitDto): any {
         return this.httpClient.patch<Participants>(`${this.urlAuth}/participants/downvote`, petitDto, { withCredentials: true } );
     }
     getScoreList(): Observable <Participants[] > {

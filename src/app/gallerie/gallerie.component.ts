@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PartcipantService } from '../services/participant.service';
 import { Participants } from '../models/Participants';
-import { PetiteDto } from '../models/petiteDto';
+import { PetitDto } from '../models/petitDto';
 
 @Component({
   selector: 'app-gallerie',
@@ -11,7 +11,7 @@ import { PetiteDto } from '../models/petiteDto';
 export class GallerieComponent implements OnInit {
 message: string;
   participant: Participants[];
-  petit: PetiteDto;
+  petit: PetitDto;
   constructor(private service: PartcipantService) { }
 upVote(matricule: string) {
   this.petit.like = 1;
